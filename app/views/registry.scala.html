@@ -1,0 +1,234 @@
+@(title: String, menu: String, key: Option[Long])
+
+@main(title, menu) {
+    <!--=== Breadcrumbs ===-->
+    <div class="breadcrumbs margin-bottom-40">
+      <div class="container">
+        <h1 class="pull-left">Datos de Registro en el proyecto piloto</h1>
+        <ul class="pull-right breadcrumb">
+          <li><a href="@routes.Application.index()">Home</a>
+          <li>Proyecto piloto
+          <li class="active">Datos de Registro
+        </ul>
+      </div><!--/ccontainer-->
+    </div><!--/breadcrumbs-->
+    <!--=== End Breadcrumbs ===-->
+    <!--=== Content Part ===-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3" id="side-menu">
+          @sidemenu(menu)
+        </div><!--/col-md-3-->
+        <div class="col-md-9">
+          <blockquote class="hero pagination-centered">
+            <h2 class="color-green">Datos de Registro</h2>
+            <p>Búsqueda y obtención de datos de registro en la base de datos del proyecto piloto.
+          </blockquote>
+          <!-- inner content -->
+          <div id="data-pane">
+            <!-- Search Block -->
+            <div class="row servive-block servive-block-in margin-bottom-20" data-bind="visible: isSearchButtonVisible" style="display: none;">
+              <div class="col-md-6">
+                <div class="headline">
+                  <h2>Sistema de Búsqueda</h2>
+                </div>
+                <h4>Denominación (Name Part):</h4>
+                <div class="input-group">
+                  <span class="input-group-btn"><button class="btn btn-info" data-bind="click: searchButton" type="button">Buscar</button></span>
+                  <input class="form-control" data-bind="value: search" name="naming" type="text">
+                </div>
+              </div><!--/col-md-6-->
+            </div><!--/row-->
+            <!-- End Search Block -->
+            <!-- Result Block -->
+            <div class="row servive-block servive-block-in margin-bottom-20">
+              <div class="col-md-12">
+                <!-- List Block -->
+                <div data-bind="visible: isSearchButtonVisible" style="display: none;">
+                  <ul data-bind="template: { name: 'registryObjects-tmpl', foreach: registryObjects }"></ul>
+                  <!-- List Template -->
+                  <script id="registryObjects-tmpl" type="text/html">
+                    <li><a data-bind="text: complexNames[0].nameParts[0].value, click: $root.showRegistryObject, title: complexNames[0].nameParts[0].value, clickBubble: false" href="javascript:void(0);"></a>
+                  </script>
+                  <!-- End List Template -->
+                </div>
+                <!-- End List Block -->
+                <!-- Back-to-Search Block -->
+                <div data-bind="visible: isBackToSearchButtonVisible" style="display: none;">
+                  <button class="btn btn-info" data-bind="click: backToSearchButton">Volver al Sistema de Búsqueda</button>
+                  <br>
+                  <br>
+                </div>
+                <!-- End Back-to-Search Block -->
+                <!-- Registry-Object Block -->
+                <div class="entity registryobject" data-bind="visible: isRegistryObjectVisible" style="display: none;">
+                  <div class="headline">
+                    <h3>Registry Object</h3>
+                  </div>
+                  <dl class="dl-horizontal">
+                    <dt>registry_object_key
+                    <dd><span data-bind="text: registryObject().registry_object_key"></span>
+                    <dt>registry_object_class
+                    <dd><span data-bind="text: registryObject().registry_object_class"></span>
+                    <dt>type
+                    <dd><span data-bind="text: registryObject().type"></span>
+                    <dt>originating_source
+                    <dd><span data-bind="text: registryObject().originating_source"></span>
+                    <dt>originating_source_type
+                    <dd><span data-bind="text: registryObject().originating_source_type"></span>
+                  </dl>
+                  <div class="block entity identifier" data-bind="visible: isIdentifiersVisible">
+                    <div class="headline">
+                      <h2>Identifiers</h2>
+                    </div>
+                    <div class="list" data-bind="template: { name: 'identifiers-tmpl', foreach: registryObject().identifiers }"></div>
+                    <!-- Identifiers Template -->
+                    <script id="identifiers-tmpl" type="text/html">
+                      <dl class="dl-horizontal">
+                        <dt>identifier_id
+                        <dd><span data-bind="text: identifier_id"></span>
+                        <dt><span data-bind="text: type"></span>
+                        <dd><span data-bind="text: value"></span>
+                      </dl>
+                    </script>
+                    <!-- End Identifiers Template -->
+                  </div><!--/identifier-->
+                  <div class="block entity description" data-bind="visible: isDescriptionsVisible">
+                    <div class="headline">
+                      <h2>Descriptions</h2>
+                    </div>
+                    <div class="list" data-bind="template: { name: 'descriptions-tmpl', foreach: registryObject().descriptions }"></div>
+                    <!-- Descriptions Template -->
+                    <script id="descriptions-tmpl" type="text/html">
+                      <dl class="dl-horizontal">
+                        <dt>description_id
+                        <dd><span data-bind="text: description_id"></span>
+                        <dt><span data-bind="text: type"></span>
+                        <dd><span data-bind="text: value"></span>
+                      </dl>
+                    </script>
+                    <!-- End Descriptions Template -->
+                  </div><!--/description-->
+                  <div class="block entity complexname" data-bind="visible: isComplexNamesVisible">
+                    <div class="headline">
+                      <h2>Complex Names</h2>
+                    </div>
+                    <div class="list" data-bind="template: { name: 'complexnames-tmpl', foreach: registryObject().complexNames }"></div>
+                    <!-- ComplexNames Template -->
+                    <script id="complexnames-tmpl" type="text/html">
+                      <dl class="dl-horizontal">
+                        <dt>complex_name_id
+                        <dd><span data-bind="text: complex_name_id"></span>
+                        <dt><span data-bind="text: type"></span>
+                        <dd><span data-bind="text: value"></span></dd>
+                        <br>
+                        <div data-bind="template: { name: 'nameparts-tmpl', foreach: registryObject().nameParts }"></div>
+                      </dl>
+                    </script>
+                    <!-- End ComplexNames Template -->
+                    <!-- NameParts Template -->
+                    <script id="nameparts-tmpl" type="text/html">
+                      <dl class="dl-horizontal">
+                        <dt>name_part_id
+                        <dd><span data-bind="text: name_part_id"></span>
+                        <dt><span data-bind="text: type"></span>
+                        <dd><span data-bind="text: value"></span>
+                      </dl>
+                    </script>
+                    <!-- End NameParts Template -->
+                  </div><!--/complexname-->
+                  <div class="block entity location" data-bind="visible: isLocationsVisible">
+                    <div class="headline">
+                      <h2>Locations</h2>
+                    </div>
+                    <div class="list" data-bind="template: { name: 'locations-tmpl', foreach: registryObject().locations }"></div>
+                    <!-- Locations Template -->
+                    <script id="locations-tmpl" type="text/html">
+                      <dl class="dl-horizontal">
+                        <dt>location_id
+                        <dd><span data-bind="text: location_id"></span></dd>
+                        <br>
+                        <div data-bind="template: { name: 'addresslocations-tmpl', foreach: addressLocations }"></div>
+                      </dl>
+                    </script>
+                    <!-- End Locations Template -->
+                    <!-- AddressLocations Template -->
+                    <script id="addresslocations-tmpl" type="text/html">
+                      <dl class="dl-horizontal">
+                        <dt>address_location_id
+                        <dd><span data-bind="text: address_location_id"></span></dd>
+                        <br>
+                        <div class="list" data-bind="template: { name: 'electronicaddresses-tmpl', foreach: electronicAddresses }"></div>
+                        <div class="list" data-bind="template: { name: 'physicaladdresses-tmpl', foreach: physicalAddresses }"></div>
+                      </dl>
+                    </script>
+                    <!-- End AddressLocations Template -->
+                    <!-- ElectronicAddresses Template -->
+                    <script id="electronicaddresses-tmpl" type="text/html">
+                      <dl class="dl-horizontal">
+                        <dt>electronic_address_id
+                        <dd><span data-bind="text: electronic_address_id"></span>
+                        <dt><span data-bind="text: type"></span>
+                        <dd><span data-bind="text: value"></span>
+                      </dl>
+                    </script>
+                    <!-- End ElectronicAddresses Template -->
+                    <!-- PhysicalAddresses Template -->
+                    <script id="physicaladdresses-tmpl" type="text/html">
+                      <dl class="dl-horizontal">
+                        <dt>physical_address_id
+                        <dd><span data-bind="text: physical_address_id"></span></dd>
+                        <br>
+                        <div class="list" data-bind="template: { name: 'addressparts-tmpl', foreach: addressParts }"></div>
+                      </dl>
+                    </script>
+                    <!-- End PhysicalAddresses Template -->
+                    <!-- AddressParts Template -->
+                    <script id="addressparts-tmpl" type="text/html">
+                      <dl class="dl-horizontal">
+                        <dt>address_part_id
+                        <dd><span data-bind="text: address_part_id"></span>
+                        <dt><span data-bind="text: type"></span>
+                        <dd><span data-bind="text: value"></span>
+                      </dl>
+                    </script>
+                    <!-- End AddressParts Template -->
+                  </div><!--/location-->
+                  <div class="block entity relation" data-bind="visible: isRelationsVisible">
+                    <div class="headline">
+                      <h2>Relations</h2>
+                    </div>
+                    <div class="list" data-bind="template: { name: 'relations-tmpl', foreach: registryObject().relations }"></div>
+                    <!-- Relations Template -->
+                    <script id="relations-tmpl" type="text/html">
+                      <dl class="dl-horizontal">
+                        <div class="list" data-bind="template: { name: 'relationdescriptions-tmpl', foreach: relationDescriptions }"></div>
+                        <dt>&nbsp;
+                        <dd><a class="btn btn-xs btn-info" data-bind="click: $root.showRelatedRegistryObject, clickBubble: false" href="javascript:void(0);">Related Object</a>
+                      </dl>
+                    </script>
+                    <!-- End Relations Template -->
+                    <!-- RelationDescriptions Template -->
+                    <script id="relationdescriptions-tmpl" type="text/html">
+                      <dl class="dl-horizontal">
+                        <dt><span data-bind="text: type"></span>
+                        <dd><span data-bind="text: description"></span>
+                      </dl>
+                    </script>
+                    <!-- End RelationDescriptions Template -->
+                  </div>
+                </div><!--/registryobject-->
+                <!-- End Registry-Object Block -->
+              </div><!--/col-md-12-->
+            </div><!--/row-->
+            <!-- End Result Block -->
+          </div><!--/data-pane-->
+          <!-- inner content -->
+        </div><!--/col-md-9-->
+      </div><!--/row-->
+    </div><!--/container-->
+    <!--=== End Content Part ===-->
+    <script type="text/javascript">
+      var keyVm = "@key";
+    </script>
+}

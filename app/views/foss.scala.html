@@ -1,0 +1,40 @@
+@(title: String, menu: String)
+
+@main(title, menu) {
+    <!--=== Breadcrumbs ===-->
+    <div class="breadcrumbs margin-bottom-40">
+      <div class="container">
+        <h1 class="pull-left"><em>Free &amp; Open Source Software</em></h1>
+        <ul class="pull-right breadcrumb">
+          <li><a href="@routes.Application.index()">Home</a>
+          <li>Proyecto SERBER
+          <li class="active"><em>Free &amp; Open Source Software</em>
+        </ul>
+      </div><!--/container-->
+    </div><!--/breadcrumbs-->
+    <!--=== End Breadcrumbs ===-->
+    <!--=== Content Part ===-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3" id="side-menu">
+          @sidemenu(menu)
+        </div><!--/col-md-3-->
+        <div class="col-md-9">
+          <blockquote class="hero pagination-centered">
+            <h2 class="color-green">Free &amp; Open Source Software</h2>
+            <p>Movimiento de software libre y metodologías de código abierto.
+          </blockquote>
+          <!-- inner content -->
+          <div class="row servive-block servive-block-in margin-bottom-20">
+            <ol>
+              <li><p>Potenciar el movimiento de software libre.  Se pretende facilitar la contribución a SERBER desde otras comunidades por lo que la arquitectura y otras tecnologías implicadas deben ser lo suficientemente libres como para, efectivamente, facilitar al máximo la colaboración de otros programadores (más motivación, menos <em>vendor lock-in</em>).
+              <li><p>Utilizar la metodología de código abierto.  Se pretende facilitar la adopción de SERBER por otras instituciones por lo que la arquitectura y otras tecnologías implicadas deben ser lo suficientemente abiertas como para, efectivamente, facilitar al máximo la intercambiabilidad de los distintos componentes (más separación de conceptos, menos monolítico).
+              <li><p>Adoptar bibliotecas, <em>frameworks</em> y lenguajes de programación de libre distribución y sin coste de licencia: KnockoutJS, JavaScript, Play, Java/Scala, H2, SQL.
+            </ol>
+          </div>
+          <!-- inner content -->
+        </div><!--/col-md-9-->
+      </div><!--/row-->
+    </div><!--/container-->
+    <!--=== End Content Part ===-->
+}

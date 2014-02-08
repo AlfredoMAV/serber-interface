@@ -1,0 +1,53 @@
+@(title: String, menu: String)
+
+@main(title, menu) {
+    <!--=== Breadcrumbs ===-->
+    <div class="breadcrumbs margin-bottom-40">
+      <div class="container">
+        <h1 class="pull-left">Notas sobre el proyecto piloto</h1>
+        <ul class="pull-right breadcrumb">
+          <li><a href="@routes.Application.index()">Home</a>
+          <li>Proyecto piloto
+          <li class="active">Notas
+        </ul>
+      </div><!--/container-->
+    </div><!--/breadcrumbs-->
+    <!--=== End Breadcrumbs ===-->
+    <!--=== Content Part ===-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3" id="side-menu">
+          @sidemenu(menu)
+        </div><!--/col-md-3-->
+        <div class="col-md-9">
+          <blockquote class="hero pagination-centered">
+            <h2 class="color-green">Notas</h2>
+            <p>Exposición de los aspectos más relevantes del proyecto piloto.
+          </blockquote>
+          <!-- inner content -->
+          <div class="row servive-block servive-block-in margin-bottom-20">
+            <ol>
+              <li><h4>Tareas sobresalientes ya realizadas</h4>
+              <ul>
+                <li><p>Síntesis de un modelo de datos basado en el esquema de la ISO 2146:2010.
+                <li><p>Construcción de un servicio de registro dotado de un API de servicios web <em>RESTful</em> que permite la obtención (modo lectura) de datos de registro encapsulados en el modelo de datos, vía web y utilizando el formato JSON.
+                <li><p>Construcción de una aplicación web, "prueba de concepto" del servicio de registro, dotada de una interfaz web <em>responsive</em> de búsqueda que utilice el API de servicios web <em>RESTful</em> para la obtención (modo lectura) de datos de registro encapsulados en el modelo de datos, vía web y utilizando el formato JSON.
+                <li><p>Validación del modelo de datos mediante la carga de un lote de datos de registro procedentes de ALZIRA/DIANA en la aplicación "prueba de concepto" del servicio de registro.
+              </ul>
+              <li><h4>Tareas formales pendientes por realizar</h4>
+              <ul>
+                <li><p>Extensión de la aplicación web, "prueba de concepto" del servicio de registro, de manera que se pueda utilizar el API de servicios web <em>RESTful</em> para la búsqueda, creación, actualización y borrado (modo escritura) de datos de registro encapsulados en el modelo de datos, vía web y utilizando JSON.
+                <li><p>Elaboración de un entregable documentado.
+              </ul>
+              <li><h4>Conclusiones</h4>
+              <ul>
+                <li><p>El modelo de datos basado en el esquema de la ISO 2146:2010 ha demostrado ser perfecto para encapsular datos de registro de diferente origen y naturaleza.
+                <li><p>Se observa la siguiente cadena de implicaciones: Si no se analiza cuidadosamente el origen de datos, esto es, los objetos de registro y en especial controlando sus relaciones, entonces no será posible establecer una correcta correlación entre el origen de datos y el esquema de la ISO 2146:2010, y, por ende, tampoco se le podrá sacar el máximo partido (vocabulario estándar y controlado, identificadores únicos, abierto en número y tipo de datos de registro, manejo de históricos, etc).
+            </ol>
+          </div>
+          <!-- inner content -->
+        </div><!--/col-md-9-->
+      </div><!--/row-->
+    </div><!--/container-->
+    <!--=== End Content Part ===-->
+}

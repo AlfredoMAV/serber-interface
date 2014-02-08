@@ -1,0 +1,42 @@
+@(title: String, menu: String)
+
+@main(title, menu) {
+    <!--=== Breadcrumbs ===-->
+    <div class="breadcrumbs margin-bottom-40">
+      <div class="container">
+        <h1 class="pull-left">Metadatos</h1>
+        <ul class="pull-right breadcrumb">
+          <li><a href="@routes.Application.index()">Home</a>
+          <li>Proyecto SERBER
+          <li class="active">Metadatos
+        </ul>
+      </div><!--/container-->
+    </div><!--/breadcrumbs-->
+    <!--=== End Breadcrumbs ===-->
+    <!--=== Content Part ===-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3" id="side-menu">
+          @sidemenu(menu)
+        </div><!--/col-md-3-->
+        <div class="col-md-9">
+          <blockquote class="hero pagination-centered">
+            <h2 class="color-green">Metadatos</h2>
+            <p>Distribución de datos de registro "catalogados" con un vocabulario estándar y controlado.
+          </blockquote>
+          <!-- inner content -->
+          <div class="row servive-block servive-block-in margin-bottom-20">
+            <h4>Aspectos a realizar y tener en cuenta para la elección y control de metadatos</h4>
+            <ul>
+              <li><p>Identificar y seleccionar los vocabularios de descripción de datos de registro para la correcta representación de los objetos de registro y sus relaciones.
+              <li><p>Existe un vocabulario estándar y controlado asociado a la ISO 2146:2010 <a href="http://services.ands.org.au/documentation/rifcs/1.5/vocabs/vocabularies.html" target="_blank"><strong>aquí</strong></a>.  No obstante, sería oportuno hacer la consiguiente traducción/interpretación.
+              <li><p>Existe un lote inicial de datos de registro procedentes de ALZIRA/DIANA del que se derivan listas controladas de vocablos de descripción de datos de registro.  No obstante, sería oportuno hacer el consiguiente estudio comparativo sobre su posible correspondencia con listas estándares y controladas de vocablos de descripción de datos de registro.
+            </ul>
+            <p>Se encuentra disponible en <a href="http://hdl.handle.net/10421/6501" target="_blank"><strong>Travesía</strong></a> una monografía sobre buenas prácticas y recomendaciones en lo referente a estos temas.
+          </div>
+          <!-- End inner content -->
+        </div><!--/col-md-9-->
+      </div><!--/row-->
+    </div><!--/container-->
+    <!--=== End Content Part ===-->
+}

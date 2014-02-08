@@ -1,0 +1,22 @@
+/*
+ * SERBER main styles
+ */
+
+
+body #logo-header {
+  height: 45px;
+}
+
+body #logo-footer {
+  height: 35px;
+}
+
+body .footer .posts .dl-horizontal dt {
+  color: #3498db;
+  font-style: italic;
+  width: 100px;
+}
+
+body .footer .posts .dl-horizontal dd {
+  margin-left: 110px;
+}

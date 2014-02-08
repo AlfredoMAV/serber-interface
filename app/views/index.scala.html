@@ -1,0 +1,175 @@
+@(title: String, menu: String)
+
+@main(title, menu) {
+    <!--=== Slider ===-->
+    <div class="layer_slider">
+      <div id="layerslider-container-fw">
+        <div id="layerslider" style="width: 100%; height: 500px; margin: 0px auto; ">
+          <!-- First Slide -->
+          <div class="ls-layer" style="slidedirection: right; transition2d: 24,25,27,28; ">
+            <img alt="Slide background" class="ls-bg" src="@routes.Assets.at("images/sliders/layer/bg4.jpg")">
+            <img alt="Slider Image" class="ls-s-1" src="@routes.Assets.at("images/net-logo.png")" style=" top:40px; left: 140px; slidedirection : left; slideoutdirection : bottom; durationin : 1500; durationout : 3500; ">
+            <img alt="Slider image" class="ls-s-1" src="@routes.Assets.at("images/serber-logo.png")" style=" top:260px; left: 40px; slidedirection : left; slideoutdirection : bottom; durationin : 2500; durationout : 4500; ">
+            <span class="btn-u btn-u-buy ls-s-1" style=" padding: 9px 20px; font-size:25px; top:90px; left: 590px; slidedirection : top; slideoutdirection : bottom; durationin : 3500; durationout : 5500; ">Servicio de Registro</span>
+            <span class="btn-u btn-u-buy ls-s-2" style=" padding: 9px 20px; font-size:25px; top:140px; left: 590px; slidedirection : top; slideoutdirection : bottom; durationin : 3500; durationout : 5500; ">de Bibliotecas</span>
+            <span class="btn-u btn-u-buy ls-s-3" style=" padding: 9px 20px; font-size:25px; top:190px; left: 590px; slidedirection : top; slideoutdirection : bottom; durationin : 3500; durationout : 5500; ">y Entidades Relacionadas</span>
+            <span class="btn-u btn-u-orange ls-s1" style=" text-transform: uppercase; padding: 9px 20px; font-size:25px; top:340px; left: 590px; slidedirection : bottom; slideoutdirection : top; durationin : 3500; durationout : 5500;">Bienvenido al Proyecto SERBER&nbsp;<small>|&nbsp;piloto</small></span>
+          </div>
+          <!-- End First Slide -->
+          <!-- Second Slide -->
+          <div class="ls-layer" style="slidedirection: top; ">
+            <img alt="Slide background" class="ls-bg" src="@routes.Assets.at("images/sliders/layer/bg5.jpg")">
+            <i class="icon-chevron-sign-right ls-s-1" style=" color: #fff; font-size: 24px; top:70px; left: 40px; slidedirection : left; slideoutdirection : top; durationin : 1500; durationout : 500; "></i>
+            <span class="ls-s-2" style=" color: #fff; font-weight: 200; font-size: 22px; top:70px; left: 70px; slidedirection : top; slideoutdirection : bottom; durationin : 1500; durationout : 500; ">Modelo de Datos vanguardista</span>
+            <i class="icon-chevron-sign-right ls-s-1" style=" color: #fff; font-size: 24px; top:120px; left: 40px; slidedirection : left; slideoutdirection : top; durationin : 2500; durationout : 1500; "></i>
+            <span class="ls-s-2" style=" color: #fff; font-weight: 200; font-size: 22px; top:120px; left: 70px; slidedirection : top; slideoutdirection : bottom; durationin : 2500; durationout : 1500; ">Servicios Web <em>RESTful</em></span>
+            <i class="icon-chevron-sign-right ls-s-1" style=" color: #fff; font-size: 24px; top:170px; left: 40px; slidedirection : left; slideoutdirection : top; durationin : 3500; durationout : 3500; "></i>
+            <span class="ls-s-2" style=" color: #fff; font-weight: 200; font-size: 22px; top:170px; left: 70px; slidedirection : top; slideoutdirection : bottom; durationin : 3500; durationout : 2500; ">Interfaz Web <em>responsive</em></span>
+            <i class="icon-chevron-sign-right ls-s-1" style=" color: #fff; font-size: 24px; top:220px; left: 40px; slidedirection : left; slideoutdirection : top; durationin : 4500; durationout : 3500; "></i>
+            <span class="ls-s-2" style=" color: #fff; font-weight: 200; font-size: 22px; top:220px; left: 70px; slidedirection : top; slideoutdirection : bottom; durationin : 4500; durationout : 3500; ">Metadatos</span>
+            <i class="icon-chevron-sign-right ls-s-1" style=" color: #fff; font-size: 24px; top:270px; left: 40px; slidedirection : left; slideoutdirection : top; durationin : 5500; durationout : 4500; "></i>
+            <span class="ls-s-2" style=" color: #fff; font-weight: 200; font-size: 22px; top:270px; left: 70px; slidedirection : top; slideoutdirection : bottom; durationin : 5500; durationout : 4500; ">Datos Enlazados</span>
+            <i class="icon-chevron-sign-right ls-s-1" style=" color: #fff; font-size: 24px; top:320px; left: 40px; slidedirection : left; slideoutdirection : top; durationin : 6500; durationout : 5500; "></i>
+            <span class="ls-s-2" style=" color: #fff; font-weight: 200; font-size: 22px; top:320px; left: 70px; slidedirection : top; slideoutdirection : bottom; durationin : 6500; durationout : 5500; "><em>Free &amp; Open Source Software</em></span>
+            <a class="btn-u btn-u-blue ls-s1" href="http://www.playframework.com/" style=" padding: 9px 20px; font-size:25px; top:400px; left: 40px; slidedirection : bottom; slideoutdirection : bottom; durationin : 6500; durationout : 3500; " target="_playframework" title="The High Velocity Web Framework For Java and Scala">Play Framework</a>
+            <img alt="Slider Image" class="ls-s-1" src="@routes.Assets.at("images/net-serber-logo.png")" style=" top:30px; left: 650px; slidedirection : right; slideoutdirection : bottom; durationin : 1500; durationout : 1500; ">
+          </div>
+          <!-- End Second Slide -->
+        </div>
+      </div>
+    </div><!--/layer_slider-->
+    <!--=== End Slider ===-->
+    <!--=== Purchase ===-->
+    <div class="purchase">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <span>Servicio de Registro de Bibliotecas y Entidades Relacionadas</span>
+            <p>Registro estandarizado de datos de bibliotecas y entidades relacionadas, españolas e internacionales, compilado con objeto de dar servicio a la comunidad cultural, al entorno bibliotecario, a la gestión pública y a los ciudadanos.</p>
+            <br>
+            <h4>DEFINICIÓN ISO 2146:2010</h4>
+            <p>Registro: colección de objetos registrados compilada para dar soporte a la actividad de una determinada comunidad.
+          </div>
+          <div class="col-md-3">
+            <a class="btn-buy hover-effect" href="https://github.com/SGCB" target="_github" title="SERBER|pilot Project at GitHub">Participa</a>
+          </div>
+        </div><!--/row-->
+      </div><!--/container-->
+    </div><!--/purchase-->
+    <!--=== End Purchase ===-->
+    <!--=== Content Part ===-->
+    <div class="container">
+      <!-- Services -->
+      <div class="row">
+        <div class="col-md-4">
+          <div class="service">
+            <i class="icon-hdd service-icon"></i>
+            <div class="desc">
+              <h4>Modelo de Datos vanguardista</h4>
+              <p>Datos de registro encapsulados en un modelo de datos versátil y potente que sea recreable, mediante la ejecución de un <em>script</em> SQL DDL, en cualquiera de los sistemas de gestión de bases de datos relacionales disponibles.  La base de datos del proyecto piloto funciona sobre H2.  <a class="btn btn-xs btn-info" href="@routes.Application.dataModel()">Leer más…</a>
+            </div>
+          </div>
+        </div><!--/col-md-4-->
+        <div class="col-md-4">
+          <div class="service">
+            <i class="icon-cogs service-icon"></i>
+            <div class="desc">
+              <h4>Servicios Web <em>RESTful</em></h4>
+              <p>Aplicación de registro que permite la administración vía web de datos de registro encapsulados en un novedoso modelo de datos.  Estos servicios web son <em>RESTful</em>, es decir, funcionan de forma óptima sobre el protocolo HTTP.  <a class="btn btn-xs btn-info" href="@routes.Application.webServices()">Leer más…</a>
+            </div>
+          </div>
+        </div><!--/col-md-4-->
+        <div class="col-md-4">
+          <div class="service">
+            <i class="icon-resize-small service-icon"></i>
+            <div class="desc">
+              <h4>Interfaz Web <em>responsive</em></h4>
+              <p>Interacción con registro que permite la gestión vía web de datos de registro encapsulados en un novedoso modelo de datos.  Esta interfaz web es <em>responsive</em>, es decir, funciona de forma óptima sobre cualquier dispositivo.  <a class="btn btn-xs btn-info" href="@routes.Application.webInterface()">Leer más…</a>
+            </div>
+          </div>
+        </div><!--/col-md-4-->
+      </div><!--/row-->
+      <div class="row">
+        <div class="col-md-4">
+          <div class="service">
+            <i class="icon-th-list service-icon"></i>
+            <div class="desc">
+              <h4>Metadatos</h4>
+              <p>Identificación y selección de vocabularios adecuados para la correcta representación de los objetos de registro y sus relaciones.  <a class="btn btn-xs btn-info" href="@routes.Application.metadata()">Leer más…</a>
+            </div>
+          </div>
+        </div><!--/col-md-4-->
+        <div class="col-md-4">
+          <div class="service">
+            <i class="icon-random service-icon"></i>
+            <div class="desc">
+              <h4>Datos Enlazados</h4>
+              <p>Creación de un esquema RDF que permita intercambiar datos de registro como datos enlazados SERBER.  <a class="btn btn-xs btn-info" href="@routes.Application.linkedData()">Leer más…</a>
+            </div>
+          </div>
+        </div><!--/col-md-4-->
+        <div class="col-md-4">
+          <div class="service">
+            <i class="icon-cloud service-icon"></i>
+            <div class="desc">
+              <h4><em>Free &amp; Open Source Software</em></h4>
+              <p>Utilización de software libre y código abierto.  Énfasis en la contribución y en la adopción facilitando tanto la colaboración de otros programadores como la intercambiabilidad de los distintos componentes.  <a class="btn btn-xs btn-info" href="@routes.Application.foss()">Leer más…</a>
+            </div>
+          </div>
+        </div> <!--/col-md-4-->
+      </div><!--/row-->
+      <!-- End Services -->
+      <!-- Headlines -->
+      <div class="row">
+        <!-- pilot Project -->
+        <div class="col-md-8">
+          <div class="headline">
+            <h2>Objetivos del proyecto piloto</h2>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <img alt="" class="img-responsive margin-bottom-20" src="@routes.Assets.at("images/net-logo.png")">
+            </div><!--/col-sm-4-->
+            <div class="col-sm-8">
+              <p>El proyecto piloto pretende demostrar algunas de las características del proyecto SERBER:
+              <ul class="list-unstyled margin-bottom-20">
+                <li><p><i class="icon-ok color-green"></i>  Síntesis de un novedoso modelo de datos basado en el esquema de la ISO 2146:2010 que permita encapsular datos de registro procedentes de ALZIRA/DIANA.
+                <li><p><i class="icon-ok color-green"></i>  Construcción de un servicio de registro dotado de un API de servicios web <em>RESTful</em> que permita la obtención (modo lectura) de datos de registro encapsulados en un novedoso modelo de datos.  Utilización de software libre y código abierto.
+                <li><p><i class="icon-ok color-green"></i>  Construcción de una aplicación web, "prueba de concepto" del servicio de registro, dotada de una interfaz web <em>responsive</em> de búsqueda que utilice un API de servicios web <em>RESTful</em> para la obtención (modo lectura) de datos de registro encapsulados en un novedoso modelo de datos.  Utilización de software libre y código abierto.
+              </ul>
+            </div><!--/col-sm-8-->
+          </div><!--/row-->
+          <div class="row">
+            <div class="col-sm-12">
+              <dl class="dl-horizontal">
+                <dt><a class="btn btn-xs btn-info" href="@routes.Application.notes()">Notas</a>
+                <dd><p>Exposición de los aspectos más relevantes del proyecto piloto.
+              </dl>
+              <dl class="dl-horizontal">
+                <dt><a class="btn btn-xs btn-info" href="@routes.Application.registryData()">Datos de Registro</a>
+                <dd><p>Búsqueda y obtención de datos de registro en la base de datos del proyecto piloto.
+              </dl>
+            </div><!--/col-sm-12-->
+          </div><!--/row-->
+        </div><!--/col-md-8-->
+        <!-- End pilot Project -->
+        <!-- References -->
+        <div class="col-md-4">
+          <div class="headline">
+            <h2>Referencias</h2>
+          </div>
+          <dl>
+            <dt><h5><a class="text-info" href="http://ands.org.au/resource/rif-cs.html" target="_reference"><em>Registry Interchange Format - Collections and Services (RIF-CS)</em></a></h5>
+            <dd><p>ANDS dispone de la mejor implementación de la ISO 2146:2010 hasta la fecha y también de abundante información que resulta de gran utilidad para comprender mejor como desarrollar una aplicación de la misma.
+          </dl>
+          <dl>
+            <dt><h5><a class="text-info" href="http://hdl.handle.net/10421/6501" target="_reference">Formatos de intercambio aplicables a SERBER</a></h5>
+            <dd><p>Travesía dispone de una monografía acerca de las buenas prácticas y recomendaciones estratégicas sobre formatos de intercambio aplicables al Servicio de Registro de Bibliotecas y Entidades Relacionadas (SERBER) en un contexto de datos abiertos y enlazados.
+          </dl>
+        </div><!--/col-md-4-->
+        <!-- End References -->
+      </div><!--/row-->
+      <!-- End Headlines -->
+    </div><!--/container-->
+    <!--=== End Content Part ===-->
+}

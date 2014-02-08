@@ -1,0 +1,40 @@
+@(title: String, menu: String)
+
+@main(title, menu) {
+    <!--=== Breadcrumbs ===-->
+    <div class="breadcrumbs margin-bottom-40">
+      <div class="container">
+        <h1 class="pull-left">Interfaz Web <em>responsive</em></h1>
+        <ul class="pull-right breadcrumb">
+          <li><a href="@routes.Application.index()">Home</a>
+          <li>Proyecto SERBER
+          <li class="active">Interfaz Web
+        </ul>
+      </div><!--/container-->
+    </div><!--/breadcrumbs-->
+    <!--=== End Breadcrumbs ===-->
+    <!--=== Content Part ===-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3" id="side-menu">
+          @sidemenu(menu)
+        </div><!--/col-md-3-->
+        <div class="col-md-9">
+          <blockquote class="hero pagination-centered">
+            <h2 class="color-green">Interfaz Web</h2>
+            <p>Interacción con registro que permite la gestión web de datos de registro desde cualquier dispositivo.
+          </blockquote>
+          <!-- inner content -->
+          <div class="row servive-block servive-block-in margin-bottom-20">
+            <ol>
+              <li><p>La interacción con registro proporciona un mecanismo de gestión que permite buscar, visualizar y depurar datos de registro mediante una interfaz web.
+              <li><p>La interfaz web habilita la posibilidad de manejar orígenes de datos, vocabularios controlados y vigilancia de duplicados.
+              <li><p>La interfaz web es <em>responsive</em>, es decir, fluida y adaptable.  Una interfaz web <em>responsive</em> permite que la interacción con los contenidos ocurra sobre cualquier dispositivo de forma óptima.
+            </ol>
+          </div>
+          <!-- End inner content -->
+        </div><!--/col-md-9-->
+      </div><!--/row-->
+    </div><!--/container-->
+    <!--=== End Content Part ===-->
+}

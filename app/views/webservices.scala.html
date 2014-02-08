@@ -1,0 +1,53 @@
+@(title: String, menu: String)
+
+@main(title, menu) {
+    <!--=== Breadcrumbs ===-->
+    <div class="breadcrumbs margin-bottom-40">
+      <div class="container">
+        <h1 class="pull-left">Servicios Web <em>RESTful</em></h1>
+        <ul class="pull-right breadcrumb">
+          <li><a href="@routes.Application.index()">Home</a>
+          <li>Proyecto SERBER
+          <li class="active">Servicios Web
+        </ul>
+      </div><!--/container-->
+    </div><!--/breadcrumbs-->
+    <!--=== End Breadcrumbs ===-->
+    <!--=== Content Part ===-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3" id="side-menu">
+          @sidemenu(menu)
+        </div><!--/col-md-3-->
+        <div class="col-md-9">
+          <blockquote class="hero pagination-centered">
+            <h2 class="color-green">Servicios Web</h2>
+            <p>Aplicación de registro que permite la administración web de datos de registro desde el protocolo HTTP.
+          </blockquote>
+          <!-- inner content -->
+          <div class="row servive-block servive-block-in margin-bottom-20">
+            <ol>
+              <li><p>La aplicación de registro proporciona un mecanismo de administración que permite buscar, crear, obtener, actualizar y borrar datos de registro mediante unos servicios web.
+              <li><p>Los servicios web habilitan la posibilidad de intercambiar información con terceros (presentaciones de registro) y lo hacen utilizando alguno de los siguientes formatos:
+              <ul>
+                <li><p>XML: Este formato resulta especialmente útil para el intercambio de información genérica (documentos) entre dispositivos físicos o lógicos.  Se trata de un formato muy extensible y versátil.  En este caso, éste se utilizará para documentar el esquema de la ISO 2146:2010.
+                <li><p>JSON: Este formato resulta especialmente útil para el intercambio de información específica (datos) entre la interfaz web y el servidor web. Se trata de un formato muy seguro e inteligible.  En este caso, éste se utilizará para el intercambio información con el modelo de datos.
+              </ul>
+              <li><p>Los servicios web son <em>RESTful</em>, es decir, ligeros y estándares.  Unos servicios web <em>RESTful</em> permiten que la aplicación de registro ocurra sobre el protocolo HTTP de forma óptima.
+              <p>API de servicios web <em>RESTful</em> para la aplicación de registro:
+              <ul>
+                <li><code>(POST)&nbsp;/api/registry-object/:id</code>
+                <li><code>(GET)&nbsp;/api/registry-object/:id</code>
+                <li><code>(PUT)&nbsp;/api/registry-object/:id</code>
+                <li><code>(DELETE)&nbsp;/api/registry-object/:id</code>
+                <li><code>(GET)&nbsp;/api/registry-objects</code>
+                <li>…
+              </ul>
+            </ol>
+          </div>
+          <!-- inner content -->
+        </div><!--/col-md-9-->
+      </div><!--/row-->
+    </div><!--/container-->
+    <!--=== End Content Part ===-->
+}

@@ -1,0 +1,45 @@
+@(title: String, menu: String)
+
+@main(title, menu) {
+    <!--=== Breadcrumbs ===-->
+    <div class="breadcrumbs margin-bottom-40">
+      <div class="container">
+        <h1 class="pull-left">Datos Enlazados</h1>
+        <ul class="pull-right breadcrumb">
+          <li><a href="@routes.Application.index()">Home</a>
+          <li>Proyecto SERBER
+          <li class="active">Datos Enlazados
+        </ul>
+      </div><!--/container-->
+    </div><!--/breadcrumbs-->
+    <!--=== End Breadcrumbs ===-->
+    <!--=== Content Part ===-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3" id="side-menu">
+          @sidemenu(menu)
+        </div><!--/col-md-3-->
+        <div class="col-md-9">
+          <blockquote class="hero pagination-centered">
+            <h2 class="color-green">Datos Enlazados</h2>
+            <p>Distribución de datos de registro siguiendo el método de datos enlazados.
+          </blockquote>
+          <!-- inner content -->
+          <div class="row servive-block servive-block-in margin-bottom-20">
+            <h4>Aspectos a realizar y tener en cuenta para la preparación de un esquema RDF</h4>
+            <ul>
+              <li><p>Concretar el modelo conceptual del perfil de aplicación de la ISO 2146:2010 en el que deben quedar perfectamente definidos y representados los objetos de registro y sus relaciones; preferentemente RDF.
+              <li><p>Establecer el sistema de identificación de los diferentes tipos de datos de registro representados en el modelo conceptual mediante URIs.
+              <li><p>Identificar y seleccionar los vocabularios de descripción de datos de registro para la correcta representación de los objetos de registro y sus relaciones.
+              <li><p>Concretar un esquema de codificación de datos de registro en una sintaxis de ontología; preferentemente RDFS.
+              <li><p>Asegurar la correcta publicación y mantenimiento del esquema.
+              <li><p>Diseñar los procesos funcionales de enriquecimiento de datos de registro.
+            </ul>
+            <p>Se encuentra disponible en <a href="http://hdl.handle.net/10421/6501" target="_blank"><strong>Travesía</strong></a> una monografía sobre buenas prácticas y recomendaciones en lo referente a estos temas.
+          </div>
+          <!-- End inner content -->
+        </div><!--/col-md-9-->
+      </div><!--/row-->
+    </div><!--/container-->
+    <!--=== End Content Part ===-->
+}

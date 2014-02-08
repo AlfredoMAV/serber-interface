@@ -1,0 +1,49 @@
+@(title: String, menu: String)
+
+@main(title, menu) {
+    <!--=== Breadcrumbs ===-->
+    <div class="breadcrumbs margin-bottom-40">
+      <div class="container">
+        <h1 class="pull-left">Modelo de Datos vanguardista</h1>
+        <ul class="pull-right breadcrumb">
+          <li><a href="@routes.Application.index()">Home</a>
+          <li>Proyecto SERBER
+          <li class="active">Modelo de Datos
+        </ul>
+      </div><!--/container-->
+    </div><!--/breadcrumbs-->
+    <!--=== End Breadcrumbs ===-->
+    <!--=== Content Part ===-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3" id="side-menu">
+          @sidemenu(menu)
+        </div><!--/col-md-3-->
+        <div class="col-md-9">
+          <blockquote class="hero pagination-centered">
+            <h2 class="color-green">Modelo de Datos</h2>
+            <p>Modelo de datos versátil, potente y con capacidad para encapsular datos de registro de diferente origen y naturaleza.
+          </blockquote>
+          <!-- inner content -->
+          <div class="row servive-block servive-block-in margin-bottom-20">
+            <ol>
+              <li><h5><a class="text-info" href="http://services.ands.org.au/documentation/ORCA-Registry.3.0.DatabaseSchema.pdf" target="_blank"><em>Database Schema</em></a></h5>
+              <p>El modelo de datos se basa en el esquema de la ISO 2146:2010 ya probado e implementado por ANDS.  Este modelo de datos ha demostrado ser perfecto para encapsular datos de registro provenientes de diferentes fuentes (origen) y, por tanto, datos de registro de diferentes tipos (naturaleza).
+              <li><h5><a class="text-info" href="http://services.ands.org.au/documentation/rifcs/1.5/schemadocs/registryObjects.html" target="_blank">Documentación navegable del esquema de la ISO 2146:2010</a></h5>
+              <p>El modelo de datos ha sido sintetizado a partir de las estructuras XML que implementan el esquema de la ISO 2146:2010.  Existe una extensa documentación acerca de dicho esquema.  Resulta muy recomendable seguir de cerca dicha documentación para no perderse en los campos uno-a-varios, los campos complejos, las relaciones de múltiples niveles o los "pares" <em>type</em>/<em>value</em>.
+              <ul>
+                <li><a href="http://services.ands.org.au/documentation/rifcs/1.5/schema/registryObjects.xsd" target="_blank"><em>Registry Objects Schema</em></a>
+                <li><a href="http://services.ands.org.au/documentation/rifcs/1.5/schema/activity.xsd" target="_blank"><em>Activity Schema</em></a>
+                <li><a href="http://services.ands.org.au/documentation/rifcs/1.5/schema/collection.xsd" target="_blank"><em>Collection Schema</em></a>
+                <li><a href="http://services.ands.org.au/documentation/rifcs/1.5/schema/party.xsd" target="_blank"><em>Party Schema</em></a>
+                <li><a href="http://services.ands.org.au/documentation/rifcs/1.5/schema/service.xsd" target="_blank"><em>Service Schema</em></a>
+                <li><a href="http://services.ands.org.au/documentation/rifcs/1.5/schema/registryTypes.xsd" target="_blank"><em>Registry Types Schema</em></a>
+              </ul>
+            </ol>
+          </div>
+          <!-- End inner content -->
+        </div><!--/col-md-9-->
+      </div><!--/row-->
+    </div><!--/container-->
+    <!--=== End Content Part ===-->
+}
